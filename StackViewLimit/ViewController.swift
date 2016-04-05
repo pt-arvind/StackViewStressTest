@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func presentStack(sender: AnyObject) {
+        self.navigationController?.pushViewController(StackLimitBreakViewController(), animated: true)
+    }
 
 }
 
