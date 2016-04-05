@@ -89,7 +89,7 @@ class TrumpView : UIView {
 
 class MapView : UIView {
     lazy var container: UIView = {
-        let container = UIView(frame: CGRectZero)
+        let container = UIView()
         
         self.addSubview(container)
         return container
@@ -166,7 +166,7 @@ let itemSquareSideLength = UIScreen.mainScreen().bounds.width/2 - 1
 
 class TrinketView : UIView, UICollectionViewDataSource {
     lazy var container: UIView = {
-        let container = UIView(frame: CGRectZero)
+        let container = UIView()
         
         self.addSubview(container)
         return container
@@ -233,9 +233,11 @@ class TrinketView : UIView, UICollectionViewDataSource {
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Trinket", forIndexPath: indexPath) as! TrinketCell
-        print(cell)
-        print(items[indexPath.row])
+//        print(cell)
+//        print(items[indexPath.row])
         cell.image.image = items[indexPath.row]
+//        cell.setNeedsUpdateConstraints()
+        cell.updateConstraintsIfNeeded()
 //        collectionView.reloadItemsAtIndexPaths([indexPath])
         return cell
     }
@@ -252,7 +254,7 @@ class StackLimitBreakViewController : UIViewController {
     }()
     
     lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [PepeView(), PepeView(), TrumpView(), TrinketView(), MapView()])
+        let stack = UIStackView(arrangedSubviews: [PepeView(), PepeView(), TrumpView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrumpView(), TrumpView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(), TrinketView(),TrinketView(), TrinketView(), TrinketView(), MapView()])
         stack.axis = .Vertical
         
         self.stackViewContainer.addSubview(stack)
