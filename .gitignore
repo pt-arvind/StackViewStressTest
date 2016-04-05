@@ -1,0 +1,9 @@
+.swift-version
+.DS_Store
+.idea/
+Pods
+xcuserdata
+Localizations.swift
+*.xccheckout
+*.xcuserstate
+*~
